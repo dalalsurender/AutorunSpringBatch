@@ -1,0 +1,41 @@
+package com.jgSurender.springboot.batch.decider.condition;
+
+import lombok.extern.log4j.Log4j2;
+import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.StepExecution;
+import org.springframework.batch.core.job.flow.FlowExecutionStatus;
+import org.springframework.batch.core.job.flow.JobExecutionDecider;
+
+/*************************************
+ * This Class is used to 
+ * Author  : Surender Dalal
+ * File    : com.jgSurender.springboot.batch.decider.condition.FlowDecider
+ * Date    : 16-08-2024
+ * Version : 1.0
+ **************************************/
+@Log4j2
+public class FlowDecider implements JobExecutionDecider {
+
+    public static final String NOTIFY = "NOTIFY";
+    public static final String QUIET = "QUIET";
+
+    // this can be custom code where you can configure ,whether you want to notify or not
+    private boolean shouldNotify() {
+        return true;
+    }
+
+    /**
+     * @param jobExecution
+     * @param stepExecution
+     * @return
+     */
+    @Override
+    public FlowExecutionStatus decide(JobExecution jobExecution, StepExecution stepExecution) {
+        log.info("In the FLow Decider ::");
+        if(shouldNotify()) {
+            return new FlowExecutionStatus(NOTIFY);
+        }else {
+            return new FlowExecutionStatus(QUIET);
+        }
+    }
+}

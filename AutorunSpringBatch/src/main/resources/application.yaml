@@ -1,0 +1,52 @@
+server:
+  servlet:
+    context-path: /sbevents
+  port: 9090
+
+spring:
+  application:
+    name: springboot-call-back
+  flyway:
+    enabled: false
+  batch:
+    job:
+      enabled: false
+  main:
+    banner-mode: console
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sbbatch
+    username: root
+    password:
+    hikari:
+      minimum-idle: 0
+      maximum-pool-size: 10
+      idle-timeout: 30000
+      pool-name: sbbatch-pool-cp
+      max-lifetime: 200000
+      connection-timeout: 30000
+  jmx:
+    enabled: false
+  jpa:
+    show-sql: true
+    open-in-view: true
+    properties:
+      release_mode: after_transaction
+      agressive_release: true
+      hibernate:
+        id:
+          new_generator_mappings: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+<<<<<<< HEAD
+=======
+  batch:
+    job:
+      enabled: false
+filepath : "D:\\readfile\\1.txt"
+folderpath : "D:\\readfile"
+>>>>>>> e04c41a9317e00ed75fbba5d261f6133834a39c7
