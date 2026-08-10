@@ -1,5 +1,5 @@
-# SpringBatchConcepts
-This project will be having the Tasklet and Chunk Based process . Also covers the decider
+# Steps of implement of Spring Batch Concepts
+This project will be having the Tasklet and Chunk Based process. Also covers the decider
 
 ## Topics Covered
 ### Chunk Processing
